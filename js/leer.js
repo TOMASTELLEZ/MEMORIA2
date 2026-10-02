@@ -182,6 +182,7 @@ function mostrarCapitulo(indiceCapitulo) {
         if (seleccionados.has(claveVerso)) {
             filaVerso.classList.add('seleccionado');
         }
+        filaVerso.classList.toggle('favorito', favoritos.has(claveVerso));
 
         const numero = document.createElement('span');
         numero.className = 'numero-verso';
@@ -294,6 +295,7 @@ function syncFavoritosVisuales() {
 
         const clave = fila.dataset.clave;
         const esFavorito = favoritos.has(clave);
+        fila.classList.toggle('favorito', esFavorito);
         estrella.style.display = esFavorito ? 'inline-flex' : 'none';
         estrella.classList.toggle('activo', esFavorito);
         estrella.innerHTML = '<i class="fa-solid fa-star"></i>';

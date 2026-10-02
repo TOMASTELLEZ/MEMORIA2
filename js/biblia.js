@@ -1,5 +1,5 @@
 // Array con los 66 libros de la Biblia y sus rutas correctas desde pantallas/biblia.html
-const librosAntiguoTestamento = [
+export const librosAntiguoTestamento = [
     { nombre: "Génesis", archivo: "../procesados/genesis.js" },
     { nombre: "Éxodo", archivo: "../procesados/exodo.js" },
     { nombre: "Levítico", archivo: "../procesados/levitico.js" },
@@ -41,7 +41,7 @@ const librosAntiguoTestamento = [
     { nombre: "Malaquías", archivo: "../procesados/malaquias.js" }
 ];
 
-const librosNuevoTestamento = [
+export const librosNuevoTestamento = [
     { nombre: "Mateo", archivo: "../procesados/mateo.js" },
     { nombre: "Marcos", archivo: "../procesados/marcos.js" },
     { nombre: "Lucas", archivo: "../procesados/lucas.js" },
@@ -74,6 +74,7 @@ const librosNuevoTestamento = [
 // Función para renderizar los botones en el HTML
 function renderizarLibros(libros, contenedorId) {
     const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) return;
     
     libros.forEach(libro => {
         const enlace = document.createElement('a');
