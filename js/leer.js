@@ -156,7 +156,10 @@ function prepararSelectorCapitulos(totalCapitulos) {
 
     // Escuchar cuando el usuario cambie de capítulo
     selectCapitulo.addEventListener('change', (e) => {
+        capituloMeta = null;
+        versoMeta = null;
         mostrarCapitulo(parseInt(e.target.value));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
